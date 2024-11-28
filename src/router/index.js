@@ -1,23 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+import Home from '@/views/Home.vue'
+// import SellerPage from '@/views/SellerPage.vue'
+// import TrendPage from '@/views/TrendPage.vue'
+// import MapPage from '@/views/MapPage'
+import RankPage from '@/views/RankPage'
+import HotPage from '@/views/HotPage'
+import StockPage from '@/views/StockPage'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/screen'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/screen',
+    component: Home
+  },
+  {
+    path: '/rankPage',
+    component: RankPage
+  },
+  {
+    path: '/hotPage',
+    component: HotPage
+  },
+  {
+    path: '/stockPage',
+    component: StockPage
   }
+  // {
+  //   path: '/sellerpage',
+  //   component: SellerPage
+  // },
+  // {
+  //   path: '/trendPage',
+  //   component: TrendPage
+  // },
+  // {
+  //   path: '/mappage',
+  //   component: MapPage
+  // }
 ]
 
 const router = new VueRouter({
